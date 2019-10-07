@@ -3,5 +3,9 @@
 # YOUR NAME
 
 class DynamicArray:
-    
+    capacity = 10
+
+    def __init__(self):
+        
+        return None
     pass
