@@ -11,4 +11,7 @@ class DynamicArray:
 
     def is_empty(self):
         return True
+
+    def __len__(self):
+        return 0
     pass
