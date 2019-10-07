@@ -3,10 +3,11 @@
 # YOUR NAME
 
 class DynamicArray:
+    name = " "
     capacity = 10
 
     def __init__(self):
-        
+        name = "The bois"
         return None
 
     def is_empty(self):
@@ -14,4 +15,10 @@ class DynamicArray:
 
     def __len__(self):
         return 0
+        
+    def append(self,numb):
+        pass
+
+    def __getitem__(self, numb):
+        return 42
     pass
