@@ -1,13 +1,17 @@
 # DynamicArray: An array that grows to accommodate new elements.
 # Your implementation should pass the tests in test_dynamic_array.py.
-# YOUR NAME
+# Ethan Weikel
 
 class DynamicArray:
     name = " "
+    actualList = [None]
     capacity = 10
+    r = range(0,10)
+    for n in r:
+        actualList.append(None)
+
 
     def __init__(self):
-        name = "The bois"
         return None
 
     def is_empty(self):
@@ -17,6 +21,7 @@ class DynamicArray:
         return 0
         
     def append(self,numb):
+
         pass
 
     def __getitem__(self, numb):
