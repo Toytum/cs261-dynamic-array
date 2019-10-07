@@ -8,4 +8,7 @@ class DynamicArray:
     def __init__(self):
         
         return None
+
+    def is_empty(self):
+        return True
     pass
