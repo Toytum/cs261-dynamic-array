@@ -3,27 +3,21 @@
 # Ethan Weikel
 
 class DynamicArray:
-    name = " "
-    actualList = [None]
-    capacity = 10
-    r = range(0,10)
-    for n in r:
-        actualList.append(None)
-
 
     def __init__(self):
-        return None
 
+        self.capacity = 10
+        self.value = 0
+        return None
+        
     def is_empty(self):
         return True
 
     def __len__(self):
         return 0
-        
-    def append(self,numb):
 
-        pass
+    def append(self,num):
+        self.value = num
 
-    def __getitem__(self, numb):
-        return 42
-    pass
+    def __getitem__(self,num):
+        return self.value
