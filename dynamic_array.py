@@ -114,5 +114,13 @@ class DynamicArray:
             while(i < self.next_index):
                 sum_val += self.data[i]
                 i += 1
-                
+
         return sum_val
+
+    def linear_search(self, target):
+        i = 0
+        while(i < self.next_index):
+            if self.data[i] == target:
+                return i
+            else:
+                i +=1
