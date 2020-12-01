@@ -59,5 +59,9 @@ class DynamicArray:
                     i -= 1
                 self.data[index] = val
 
+    def is_full(self):
+        if self.next_index == self.capacity:
+            return True
+        return False
 
 
