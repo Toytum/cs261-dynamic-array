@@ -11,11 +11,15 @@ class DynamicArray:
         self.data = nmp.empty(self.capacity, dtype=nmp.object)
         self.next_index = 0
 
+        self.capacity = 10
+        self.value = 0
+        return None
+        
     def is_empty(self):
         return True
 
     def append(self, val):
-        self.data[0] = val
+        self.data[self.next_index] = val
         self.next_index += 1
 
     def __len__(self):
