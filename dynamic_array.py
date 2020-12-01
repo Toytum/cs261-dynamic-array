@@ -17,6 +17,7 @@ class DynamicArray:
         return False
 
     def append(self, val):
+        self.expand()
         self.data[self.next_index] = val
         self.next_index += 1
 
@@ -52,6 +53,7 @@ class DynamicArray:
             if not index <= self.next_index:
                 raise IndexError("index out of range")
             else:
+                self.expand()
                 self.next_index += 1
                 i = self.next_index
                 while(i >= index):
@@ -64,4 +66,14 @@ class DynamicArray:
             return True
         return False
 
+    def expand(self):
+        if self.is_full():
+            expanded_capacity = self.capacity * 2
+            expanded_array = nmp.empty(expanded_capacity, dtype = nmp.object)
+            new_index = 0
+            while(new_index < self.next_index):
+                expanded_array[new_index] = self.data[new_index]
+                new_index += 1
+            self.data = expanded_array
+            self.capacity = expanded_capacity
 

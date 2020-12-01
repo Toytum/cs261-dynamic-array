@@ -443,38 +443,38 @@ class TestDynamicArray(unittest.TestCase):
     # Increasing capacity
     # """
 
-    # def test_append_to_full(self):
-    #     """
-    #     A full dynamic array expands to accommodate a new appended element.
-    #     """
-    #     a = DynamicArray()
-    #     for _ in range(0, a.capacity):
-    #         a.append('fake')
-    #     a.append('new value')
-    #     self.assertEqual('new value', a[10])
+    def test_append_to_full(self):
+        """
+        A full dynamic array expands to accommodate a new appended element.
+        """
+        a = DynamicArray()
+        for _ in range(0, a.capacity):
+            a.append('fake')
+        a.append('new value')
+        self.assertEqual('new value', a[10])
 
-    # def test_new_capacity(self):
-    #     """
-    #     When expanding, a dynamic array doubles its capacity
-    #     """
-    #     a = DynamicArray()
-    #     for _ in range(0, a.capacity):
-    #         a.append('fake')
-    #     old_capacity = a.capacity
-    #     a.append('new value')
-    #     self.assertEqual(2 * old_capacity, a.capacity)
+    def test_new_capacity(self):
+        """
+        When expanding, a dynamic array doubles its capacity
+        """
+        a = DynamicArray()
+        for _ in range(0, a.capacity):
+            a.append('fake')
+        old_capacity = a.capacity
+        a.append('new value')
+        self.assertEqual(2 * old_capacity, a.capacity)
 
-    # def test_insert_to_full(self):
-    #     """
-    #     A full dynamic array expands to accommodate a new inserted element.
-    #     """
-    #     a = DynamicArray()
-    #     for i in range(0, a.capacity):
-    #         a.append(f"fake{i}")
-    #     a.insert(0, 'new value')
-    #     self.assertEqual('new value', a[0])
-    #     self.assertEqual('fake0', a[1])
-    #     self.assertEqual('fake9', a[10])
+    def test_insert_to_full(self):
+        """
+        A full dynamic array expands to accommodate a new inserted element.
+        """
+        a = DynamicArray()
+        for i in range(0, a.capacity):
+            a.append(f"fake{i}")
+        a.insert(0, 'new value')
+        self.assertEqual('new value', a[0])
+        self.assertEqual('fake0', a[1])
+        self.assertEqual('fake9', a[10])
 
 
     # """
