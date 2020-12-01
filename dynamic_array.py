@@ -2,28 +2,24 @@
 # Your implementation should pass the tests in test_dynamic_array.py.
 # Ethan Weikel
 
-class DynamicArray:
-    name = " "
-    actualList = [None]
-    capacity = 10
-    r = range(0,10)
-    for n in r:
-        actualList.append(None)
+import numpy as nmp
 
+class DynamicArray:
 
     def __init__(self):
-        return None
+        self.capacity = 10
+        self.data = nmp.empty(self.capacity, dtype=nmp.object)
+        self.next_index = 0
 
     def is_empty(self):
         return True
 
+    def append(self, val):
+        self.data[0] = val
+        self.next_index += 1
+
     def __len__(self):
-        return 0
-        
-    def append(self,numb):
+        return self.next_index
 
-        pass
-
-    def __getitem__(self, numb):
-        return 42
-    pass
+    def __getitem__(self, index):
+        return self.data[index]
