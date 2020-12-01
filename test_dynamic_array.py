@@ -143,129 +143,129 @@ class TestDynamicArray(unittest.TestCase):
         a.append('FAKE')
         self.assertEqual(1, a.next_index)
 
-    # def test_appending_two_values_internal(self):
-    #     """
-    #     Appending two values stores them in the first and second positions in
-    #     the internal data array.
-    #     """
-    #     a = DynamicArray()
-    #     a.append('foo')
-    #     a.append('bar')
-    #     self.assertEqual('foo', a.data[0])
-    #     self.assertEqual('bar', a.data[1])
+    def test_appending_two_values_internal(self):
+        """
+        Appending two values stores them in the first and second positions in
+        the internal data array.
+        """
+        a = DynamicArray()
+        a.append('foo')
+        a.append('bar')
+        self.assertEqual('foo', a.data[0])
+        self.assertEqual('bar', a.data[1])
 
-    # # This is a copy of the same test from way up above. If this passes, uncomment
-    # # the other uncommented test. If this is confusing, just ignore this comment.
-    # def test_append_two_values_again(self):
-    #     """
-    #     Two values can be appended to and retrieved from a dynamic array.
-    #     """
-    #     a = DynamicArray()
-    #     a.append(8)
-    #     a.append(6)
-    #     self.assertEqual(8, a[0])
-    #     self.assertEqual(6, a[1])
+    # This is a copy of the same test from way up above. If this passes, uncomment
+    # the other uncommented test. If this is confusing, just ignore this comment.
+    def test_append_two_values_again(self):
+        """
+        Two values can be appended to and retrieved from a dynamic array.
+        """
+        a = DynamicArray()
+        a.append(8)
+        a.append(6)
+        self.assertEqual(8, a[0])
+        self.assertEqual(6, a[1])
 
-    # def test_append_four_values(self):
-    #     """
-    #     Three values can be appended to and retrieved from a dynamic array.
-    #     """
-    #     a = DynamicArray()
-    #     a.append('fee')
-    #     a.append('fi')
-    #     a.append('fo')
-    #     a.append('funk')
-    #     self.assertEqual('fee', a[0])
-    #     self.assertEqual('fi', a[1])
-    #     self.assertEqual('fo', a[2])
-    #     self.assertEqual('funk', a[3])
+    def test_append_four_values(self):
+        """
+        Three values can be appended to and retrieved from a dynamic array.
+        """
+        a = DynamicArray()
+        a.append('fee')
+        a.append('fi')
+        a.append('fo')
+        a.append('funk')
+        self.assertEqual('fee', a[0])
+        self.assertEqual('fi', a[1])
+        self.assertEqual('fo', a[2])
+        self.assertEqual('funk', a[3])
 
     # """
     # Emptiness, len and clearing
     # """
 
-    # def test_is_empty(self):
-    #     """
-    #     A dynamic array containing data is not empty.
-    #     """
-    #     a = DynamicArray()
-    #     self.assertTrue(a.is_empty())
-    #     a.append('FAKE')
-    #     self.assertFalse(a.is_empty())
+    def test_is_empty(self):
+        """
+        A dynamic array containing data is not empty.
+        """
+        a = DynamicArray()
+        self.assertTrue(a.is_empty())
+        a.append('FAKE')
+        self.assertFalse(a.is_empty())
 
-    # def test_clear(self):
-    #     """
-    #     A cleared dynamic array is empty and has a length of 0.
-    #     """
-    #     a = DynamicArray()
-    #     a.append('FAKE')
-    #     a.append('FAKE')
-    #     self.assertFalse(a.is_empty())
-    #     a.clear()
-    #     self.assertTrue(a.is_empty())
-    #     self.assertEqual(0, len(a))
+    def test_clear(self):
+        """
+        A cleared dynamic array is empty and has a length of 0.
+        """
+        a = DynamicArray()
+        a.append('FAKE')
+        a.append('FAKE')
+        self.assertFalse(a.is_empty())
+        a.clear()
+        self.assertTrue(a.is_empty())
+        self.assertEqual(0, len(a))
 
-    # def test_len(self):
-    #     """
-    #     The length of a dynamic array is equal to the number of elements appended.
-    #     """
-    #     a = DynamicArray()
-    #     a.append('FAKE')
-    #     a.append('FAKE')
-    #     self.assertEqual(2, len(a))
+    def test_len(self):
+        """
+        The length of a dynamic array is equal to the number of elements appended.
+        """
+        a = DynamicArray()
+        a.append('FAKE')
+        a.append('FAKE')
+        self.assertEqual(2, len(a))
 
     # """
     # Invalid indexes
     # """
 
-    # def test_negative_index(self):
-    #     """
-    #     Accessing with a negative index raises an IndexError
-    #     """
-    #     a = DynamicArray()
-    #     try:
-    #         a[-1]
-    #         self.fail("Did not raise IndexError: index out of range.")
-    #     except IndexError:
-    #         pass
+    def test_negative_index(self):
+        """
+        Accessing with a negative index raises an IndexError
+        """
+        a = DynamicArray()
+        try:
+            a[-1]
+            self.fail("Did not raise IndexError: index out of range.")
+        except IndexError:
+            pass
 
-    # def test_large_index(self):
-    #     """
-    #     Accessing with an index greater than or equal to the last index raises an IndexError
-    #     """
-    #     a = DynamicArray()
-    #     try:
-    #         a[0]
-    #         self.fail("Did not raise IndexError: index out of range.")
-    #     except IndexError:
-    #         pass
+    def test_large_index(self):
+        """
+        Accessing with an index greater than or equal to the last index raises an IndexError
+        """
+        a = DynamicArray()
+        try:
+            a[0]
+            self.fail("Did not raise IndexError: index out of range.")
+        except IndexError:
+            pass
 
     # """
     # Removing elements from the end
     # """
 
-    # def test_pop(self):
-    #     """
-    #     Popping removes and returns the last element
-    #     """
-    #     a = DynamicArray()
-    #     a.append('fee')
-    #     a.append('fi')
-    #     a.append('fo')
-    #     last_element = a.pop()
-    #     self.assertEqual('fo', last_element)
-    #     self.assertEqual(2, len(a))
+    def test_pop(self):
+        """
+        Popping removes and returns the last element
+        """
+        a = DynamicArray()
+        a.append('fee')
+        a.append('fi')
+        a.append('fo')
+        last_element = a.pop()
+        self.assertEqual('fo', last_element)
+        self.assertEqual(2, len(a))
 
-    # def test_pop_empty(self):
-    #     """
-    #     Popping from an empty list raises an IndexError: pop from empty array
-    #     """
-    #     a = DynamicArray()
-    #     try:
-    #         a.pop()
-    #         self.fail("Did not raise IndexError: index out of range.")
-    #     except IndexError:
-    #         pass
+    def test_pop_empty(self):
+        """
+        Popping from an empty list raises an IndexError: pop from empty array
+        """
+        a = DynamicArray()
+        try:
+            a.pop()
+            self.fail("Did not raise IndexError: index out of range.")
+        except IndexError:
+            pass
 
     # """
     # Deleting
