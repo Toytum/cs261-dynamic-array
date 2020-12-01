@@ -33,7 +33,7 @@ class DynamicArray:
         self.next_index = 0
     
     def pop(self):
-        if self.next_index is not 0:
+        if self.next_index != 0:
             self.next_index -= 1
             return self.data[self.next_index]
         else:
@@ -47,4 +47,17 @@ class DynamicArray:
                 self.data[index] = self.data[index + 1]
                 index += 1
             self.next_index -= 1
+
+    def insert(self, index, val):
+            if not index <= self.next_index:
+                raise IndexError("index out of range")
+            else:
+                self.next_index += 1
+                i = self.next_index
+                while(i >= index):
+                    self.data[i] = self.data[i-1]
+                    i -= 1
+                self.data[index] = val
+
+
 
