@@ -33,5 +33,18 @@ class DynamicArray:
         self.next_index = 0
     
     def pop(self):
-        self.next_index -= 1
-        return self.data[self.next_index]
+        if self.next_index is not 0:
+            self.next_index -= 1
+            return self.data[self.next_index]
+        else:
+            raise IndexError("index out of range")
+
+    def delete(self, index):
+        if not index < self.next_index:
+            raise IndexError("index out of range")
+        else:
+            while( index < self.next_index):
+                self.data[index] = self.data[index + 1]
+                index += 1
+            self.next_index -= 1
+
