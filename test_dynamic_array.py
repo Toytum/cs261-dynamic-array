@@ -481,45 +481,45 @@ class TestDynamicArray(unittest.TestCase):
     # Max, min, and sum
     # """
 
-    # def test_max(self):
-    #     """
-    #     Max method returns the largest value in the dynamic array.
-    #     """
-    #     a = DynamicArray()
-    #     for _ in range(0, 9):
-    #         a.append(random.randint(0, 100))
-    #     largest_value = random.randint(101, 150)
-    #     a.insert(random.randint(0, 9), largest_value)
-    #     self.assertEqual(largest_value, a.max())
+    def test_max(self):
+        """
+        Max method returns the largest value in the dynamic array.
+        """
+        a = DynamicArray()
+        for _ in range(0, 9):
+            a.append(random.randint(0, 100))
+        largest_value = random.randint(101, 150)
+        a.insert(random.randint(0, 9), largest_value)
+        self.assertEqual(largest_value, a.max())
 
-    # def test_min(self):
-    #     """
-    #     Min method returns the smallest value in the dynamic array.
-    #     """
-    #     a = DynamicArray()
-    #     for _ in range(0, 9):
-    #         a.append(random.randint(100, 200))
-    #     smallest_value = random.randint(0, 50)
-    #     a.insert(random.randint(0, 9), smallest_value)
-    #     self.assertEqual(smallest_value, a.min())
+    def test_min(self):
+        """
+        Min method returns the smallest value in the dynamic array.
+        """
+        a = DynamicArray()
+        for _ in range(0, 9):
+            a.append(random.randint(100, 200))
+        smallest_value = random.randint(0, 50)
+        a.insert(random.randint(0, 9), smallest_value)
+        self.assertEqual(smallest_value, a.min())
 
-    # def test_sum(self):
-    #     """
-    #     Sum method returns the sum of all values in the dynamic array.
-    #     """
-    #     a = DynamicArray()
-    #     for val in range(10, 15):
-    #         a.append(val)
-    #     self.assertEqual(60, a.sum())
+    def test_sum(self):
+        """
+        Sum method returns the sum of all values in the dynamic array.
+        """
+        a = DynamicArray()
+        for val in range(10, 15):
+            a.append(val)
+        self.assertEqual(60, a.sum())
 
-    # def test_max_min_sum_of_empty(self):
-    #     """
-    #     The max, min or sum of an empty dynamic array is None.
-    #     """
-    #     a = DynamicArray()
-    #     self.assertEqual(None, a.sum())
-    #     self.assertEqual(None, a.min())
-    #     self.assertEqual(None, a.max())
+    def test_max_min_sum_of_empty(self):
+        """
+        The max, min or sum of an empty dynamic array is None.
+        """
+        a = DynamicArray()
+        self.assertEqual(None, a.sum())
+        self.assertEqual(None, a.min())
+        self.assertEqual(None, a.max())
 
     # """
     # Search

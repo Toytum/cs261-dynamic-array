@@ -57,6 +57,7 @@ class DynamicArray:
                 self.next_index += 1
                 i = self.next_index
                 while(i >= index):
+                    self.expand()
                     self.data[i] = self.data[i-1]
                     i -= 1
                 self.data[index] = val
@@ -71,9 +72,47 @@ class DynamicArray:
             expanded_capacity = self.capacity * 2
             expanded_array = nmp.empty(expanded_capacity, dtype = nmp.object)
             new_index = 0
+
             while(new_index < self.next_index):
                 expanded_array[new_index] = self.data[new_index]
                 new_index += 1
             self.data = expanded_array
             self.capacity = expanded_capacity
 
+    def max(self):
+        i = 0
+        max_val = 0
+        if self.is_empty():
+            return None
+        else:
+            while(i < self.next_index):
+                if self.data[i] > max_val:
+                    max_val = self.data[i]
+                i += 1
+        
+        return max_val
+
+    def min(self):
+        i = 0
+        min_val = self.data[0]
+        if self.is_empty():
+            return None
+        else:
+            while(i < self.next_index):
+                if self.data[i] < min_val:
+                    min_val = self.data[i]
+                i += 1
+
+        return min_val
+    
+    def sum(self):
+        i = 0
+        sum_val = 0
+        if self.is_empty():
+            return None
+        else:
+            while(i < self.next_index):
+                sum_val += self.data[i]
+                i += 1
+                
+        return sum_val
