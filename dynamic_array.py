@@ -128,7 +128,7 @@ class DynamicArray:
     def binary_search(self, target):
         sort(self.data)
         low = 0
-        high = self.data[self.next_index-1]
+        high = self.next_index-1
 
         while high >= low:
             middle = int(round(low + high)/2)
