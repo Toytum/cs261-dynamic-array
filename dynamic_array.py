@@ -125,19 +125,18 @@ class DynamicArray:
             else:
                 i +=1
     
-    # def binary_search(self, low = 0, high= 0, target):
-    #     sort(self.data)
-    #     low = self.data[0]
-    #     high = self.data[self.next_index-1]
-    #     mid = (high + low) // 2
+    def binary_search(self, target):
+        sort(self.data)
+        low = 0
+        high = self.data[self.next_index-1]
 
-    #     if high >= low:
-    #         if self.data[mid] == target:
-    #             return mid
-    #         elif self.data[mid] > target:
-    #             return binary_search(low, mid-1, target)
-    #         else self.data[mid] < target:
-    #             return binary_search(mid+1, high, target)
-    #     else:
-    #         return None
+        while high >= low:
+            middle = int(round(low + high)/2)
+            if self.data[middle] == target:
+                return middle
+            elif self.data[middle] > target:
+                return binary_search(low, middle-1, target)
+            elif self.data[middle] < target:
+                return binary_search(middle+1, high, target)
+            return None
         
